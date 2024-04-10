@@ -1,0 +1,19 @@
+{
+  "name": "bh_ocr",
+  "version": "1.0.1",
+  "description": "",
+  "cordova": {
+    "id": "bh_ocr",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "UNLICENCED"
+}

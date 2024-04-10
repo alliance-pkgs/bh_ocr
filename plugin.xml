@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="bh_ocr" version="1.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>BH_OCR</name>
+	<js-module name="BH_OCR" src="www/BH_OCR.js">
+		<clobbers target="BH_OCR" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="BH_OCR">
+				<param name="android-package" value="bh_ocr.BH_OCR" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml"/>
+		<source-file src="src/android/bh_ocr/BH_OCR.java" target-dir="src/bh_ocr" />
+		<source-file src="src/android/bh_ocr/checkauto/camera/com/DocumentSnapper.java" target-dir="src/bh_ocr/checkauto/camera/com" />
+		<source-file src="src/android/bh_ocr/checkauto/camera/com/DocumentSnapperRegister.java" target-dir="src/bh_ocr/checkauto/camera/com" />
+		
+		<source-file src="src/android/bh_ocr/checkauto/camera/com/utill/ViewfinderView.java" target-dir="src/bh_ocr/checkauto/camera/com/utill" />
+		<source-file src="src/android/bh_ocr/checkauto/camera/com/utill/SDCardUtils.java" target-dir="src/bh_ocr/checkauto/camera/com/utill" />
+		
+		<source-file src="src/android/bh_ocr/encode_base64/Base64.java" target-dir="src/bh_ocr/encode_base64/" />
+		<source-file src="src/android/bh_ocr/encode_base64/ByteBase64.java" target-dir="src/bh_ocr/encode_base64/" />
+		<source-file src="src/android/bh_ocr/encode_base64/EncodeBase64.java" target-dir="src/bh_ocr/encode_base64/" />
+
+	 <source-file src="res/drawable/back_camera_btn.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/camera_back.xml" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/camera_back_nomal.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/camera_back_pressed.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/camera_word.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/camera_btn.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/ex_doc.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/ex_folder.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/flash_camera_btn.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/flash_off.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/flash_on.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/folder.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/ic_launcher.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/locker_btn.xml" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/locker_btn_def.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/locker_btn_down.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/picture.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/tack_pic_btn.png" target-dir="res/drawable/"/>
+	 <source-file src="res/drawable/rounded_corner_cam.xml" target-dir="res/drawable/"/>
+
+	 <source-file src="res/drawable-en-rUS/camera_word.png" target-dir="res/drawable-en-rUS/"/>
+	 <source-file src="res/drawable-en-rUS/please_ok.png" target-dir="res/drawable-en-rUS/"/>
+	 <source-file src="res/drawable-en-rUS/please_word.png" target-dir="res/drawable-en-rUS/"/>
+
+	 <source-file src="res/layout/activity_scan_camera.xml" target-dir="res/layout/"/>
+	 <source-file src="res/layout/activity_capture_camera.xml" target-dir="res/layout/"/>
+	 <source-file src="res/layout/chinasafe_carmera.xml" target-dir="res/layout/"/>
+
+	 <resource-file src="res/assets/fonts/ZawgyiOne2008.ttf" target="assets/fonts/ZawgyiOne2008.ttf"/>
+
+	 <config-file target="res/values/strings.xml" parent="/resources">
+		 <string name="save_full_picture">save full picture</string>
+		 <string name="fileManage">File Manage</string>
+		 <string name="backLastDir">Back</string>
+		 <string name="action_settings">Settings</string>
+		 <string name="chooserIdCardType">Document formats setting</string>
+		 <string name="ActivationProgram">Activation</string>
+		 <string name="takePicture">Camera</string>
+		 <string name="license_verification_failed">license verification failed</string>
+		 <string name="online_activation">Activate Online</string>
+		 <string name="activation_success">Activate Success</string>
+		 <string name="dialog_title">Please use your activation key to “Activate Online”</string>
+		 <string name="back">Back</string>
+		 <string name="exit">Exit</string>
+		 <string name="importRecog">Import</string>
+		 <string name="back_confirm">Click again to exit</string>
+		 <string name="chooseRecogType">Document formats setting</string>
+		 <string name="title_activity_capture_camera_myKad">Capture your MyKad</string>
+		 <string name="confirm">OK</string>
+		 <!--<string name="cancel">Cancel</string>-->
+		<string name="unsupport_auto_focus">UnSupport Focus</string>
+    <string name="toast_autofocus_failure">Focus Failed</string>
+    <string name="unsupportflash">UnSupport Flash</string>
+    <string name="exception">Unrecognized code：</string>
+    <string name="exception1">Activation failed code：</string>
+    <string name="exception2">Recognition initialized failed：</string>
+    <string name="exception3">Recogniiton failed for image import, please recognition again code：</string>
+    <string name="exception4">Recogniiton failed for image import, Recognition initialized failed code：</string>
+    <string name="exception5">Recogniiton failed for image import code：</string>
+    <string name="exception6">Recogniiton failed code：</string>
+    <string name="exception9">Recognition failure! Please check your document type as you choosed is right or wrong, or confirm your card to be align within frame to scan or not</string>
+    <string name="recognized_failed">recognition Failed</string>
+    <string name="please_connect_network">Please Connect Network</string>
+    <string name="network_unused">Network is not available</string>
+		 <!-- 证件类型 -->
+		 <string name="workPermit">Work Permit</string>
+		 <string name="passport">Passport</string>
+		 <string name="title_activity_information">Information</string>
+		 <string name="title_activity_scan_camera">ScanCamera</string>
+		 <string name="title_activity_show_result">ShowResult</string>
+		 <string name="title_activity_capture_camera">Capture MyKad or Passport</string>
+		 <string name="return_activity_toast">Please enter parameters of back action</string>
+		 <string name="take_pic">Scanning</string>
+		 <string name="no_flash">Your device can\'t support flash</string>
+		 <string name="auth_overdue_front">Your license already expired on </string>
+		 <string name="auth_overdue_after">, please update the license</string>
+		 <string name="auth_error_00">Fail to find the field "company_name"in the strings files.</string>
+		 <string name="toast_code">Error code: </string>
+		 <string name="preview_hint_msg">Please fit the bank card with obverse side inside the screen</string>
+		 <string name="card_num_hint">Click to enter bank card number</string>
+		 <string name="bank_name">Bank Name:</string>
+		 <string name="bank_code">Bank ID:</string>
+		 <string name="card_name">Card Name:</string>
+		 <string name="card_type">Card Type:</string>
+		 <string name="card_date">Card Date:</string>
+		 <string name="unknow_card_type">Unknow card type</string>
+	 </config-file>
+
+	 <config-file target="AndroidManifest.xml" parent="/*">
+		 <uses-permission android:name="android.permission.INTERNET" />
+		 <uses-permission android:name="android.permission.CAMERA" />
+		 <uses-permission android:name="android.permission.RECORD_AUDIO" />
+		 <uses-feature android:name="android.hardware.camera" />
+		 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		 <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+		 <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+		 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+		 <uses-permission android:name="android.permission.WAKE_LOCK" />
+		 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+		 <uses-permission android:name="android.permission.CAMERA" />
+		 <uses-permission android:name="android.permission.VIBRATE" />
+		 <uses-permission android:name="android.permission.FLASHLIGHT" />
+		 <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+	 </config-file>
+
+	 <config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity
+				android:name="bh_ocr.checkauto.camera.com.DocumentSnapper"
+				android:screenOrientation="landscape" >
+			</activity>
+			<activity
+				android:name="bh_ocr.checkauto.camera.com.DocumentSnapperRegister"
+				android:screenOrientation="portrait" >
+			</activity>
+	 </config-file>
+
+	</platform>
+
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="BH_OCR">
+				<param name="ios-package" value="BH_OCR" />
+			</feature>
+    	</config-file>
+
+		<source-file src="src/ios/BH_OCR.swift"></source-file>
+		<source-file src="src/ios/BH_OCR-Bridging-Header.h"></source-file>
+		<source-file src="src/ios/ViewController.swift"></source-file>
+		<resource-file src="res/drawable/tack_pic_btn.png"></resource-file>
+		<resource-file src="res/drawable/camera_back_nomal.png"></resource-file>
+		<resource-file src="res/drawable/flash_camera_btn.png"></resource-file>
+
+		<dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+	</platform>
+</plugin>

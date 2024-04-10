@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/re_c"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wintone.smartvision_bankCard.ScanCamera" >
+
+    <SurfaceView
+        android:id="@+id/surfaceViwe"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <ImageButton
+        android:id="@+id/back_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_camera_btn" />
+
+    <ImageButton
+        android:id="@+id/flash_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/flash_camera_btn" />
+
+    <ImageView
+        android:id="@+id/help_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/camera_word" />
+
+    <RelativeLayout
+        android:id="@+id/bg_camera_doctype"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" >
+
+        <TextView
+            android:id="@+id/tv_camera_doctypexx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#f39912" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/imbtn_eject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/locker_btn" />
+
+    <ImageButton
+        android:id="@+id/imbtn_takepic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tack_pic_btn" 
+        android:visibility="invisible"
+        />
+	
+    <bh_ocr.checkauto.camera.com.utill.ViewfinderView
+            android:id="@+id/viewfinder_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#00000000" /> 
+    
+    
+    
+</RelativeLayout>

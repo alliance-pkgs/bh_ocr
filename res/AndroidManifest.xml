@@ -1,0 +1,72 @@
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!-- 证件识别 -->
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 关闭该包下的所有应用程序 -->
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <!-- 获取机型信息权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+
+   
+
+        <!-- 银行卡识别 -->
+        <activity
+            android:name="bh_ocr.checkauto.camera.com.ScanCamera"
+            android:screenOrientation="landscape" >
+        </activity>
+
+        <service
+            android:name="com.wintone.bankcard.AuthService"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="wintone.bankcard.authService" />
+            </intent-filter>
+        </service>
+
+        <!-- 护照识别 -->
+
+        <activity
+            android:name="bh_ocr.checkauto.camera.com.CameraActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+
+        <service
+            android:name="chinaSafe.idcard.android.AuthService"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="chinaSafe.idcard.authService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="chinaSafe.idcard.android.RecogService"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="chinaSafe.idcard.recogService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="chinaSafe.idcard.android.TimeService"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="chinaSafe.idcard.TimeService" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="chinaSafe.idcard.android.DataChangeReceiver" >
+        </receiver>
+   
